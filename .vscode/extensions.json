@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "Vue.volar",
+    "EditorConfig.EditorConfig",
+    "Vue.vscode-typescript-vue-plugin",
+    "cpylua.language-postcss"
+  ]
+}
