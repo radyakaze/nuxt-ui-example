@@ -9,7 +9,12 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-security',
     '@nuxtjs/google-fonts',
+    '@privyid/nuauth',
   ],
+  build: { transpile: ['@privyid/nuauth'] },
+  nuauth: {
+    middleware: false, // need custom middleware
+  },
   pinia: {
     autoImports: ['defineStore', 'storeToRefs'],
   },
