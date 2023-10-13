@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import { getIconCollections, iconsPlugin } from '@egoist/tailwindcss-icons'
 
 const colors = {
   main: {
@@ -8,6 +9,7 @@ const colors = {
     500: '#E42E2C',
     600: '#B22217',
   },
+  white: '#FFFFFF',
   black: {
     50: '#CED0D1',
     100: '#B6B8BA',
@@ -85,17 +87,18 @@ const colors = {
 
 export default <Partial<Config>>{
   theme: {
-    fontFamily: {
-      sans: ['Inter', 'sans-serif'], // default font
-    },
     extend: {
+      colors,
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'], // default font
+      },
       backgroundColor: {
         default: {
           DEFAULT: colors.grey[200],
           disabled: colors.grey[300],
         },
         surface: {
-          DEFAULT: '#FFFFFF',
+          DEFAULT: colors.white,
           subdued: colors.grey[100],
           disabled: colors.grey[100],
         },
@@ -129,6 +132,14 @@ export default <Partial<Config>>{
         critical: colors.critical[800],
         warning: colors.warning[800],
         interactive: colors.interactive[800],
+        icon: {
+          DEFAULT: colors.black[500],
+          subdued: colors.black[300],
+          disabled: colors.black[100],
+          success: colors.success[600],
+          critical: colors.critical[600],
+          interactive: colors.interactive[600],
+        },
       },
       borderColor: {
         default: colors.black[100],
@@ -148,10 +159,17 @@ export default <Partial<Config>>{
         critical: colors.critical[700],
         interactive: colors.interactive[700],
       },
-      colors,
+      placeholderColor: {
+        default: colors.black[400],
+      },
       spacing: {
         4.5: '1.125rem',
       },
     },
   },
+  plugins: [
+    iconsPlugin({
+      collections: getIconCollections(['mdi']),
+    }),
+  ],
 }

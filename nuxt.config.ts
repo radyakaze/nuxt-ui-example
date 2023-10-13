@@ -32,7 +32,4 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['stores', 'composables/api'],
   },
-  ui: {
-    icons: 'mdi',
-  },
 })
