@@ -3,6 +3,7 @@ export default defineAppConfig({
     strategy: 'override',
     icon: 'mdi',
     primary: 'main',
+    gray: 'grey',
     colors: ['grey', 'success', 'critical', 'warning', 'interactive', 'primary'],
 
     // Buton Preset
@@ -72,7 +73,7 @@ export default defineAppConfig({
     },
     // Input Preset
     input: {
-      placeholder: 'placeholder-black-400',
+      placeholder: 'placeholder-default',
       rounded: 'rounded-lg',
       color: {
         white: {
@@ -94,6 +95,9 @@ export default defineAppConfig({
           ].join(' '),
         },
       },
+      icon: {
+        base: 'flex-shrink-0 text-icon',
+      },
       padding: {
         md: 'py-2 px-3.5',
       },
@@ -102,6 +106,72 @@ export default defineAppConfig({
         loadingIcon: 'i-mdi-loading',
       },
     },
+    select: {
+      rounded: 'rounded-lg',
+      placeholder: 'text-default',
+      padding: {
+        md: 'py-2 px-3.5',
+      },
+      color: {
+        white: {
+          outline: [
+            'shadow-sm',
+            'bg-white',
+            'text-default',
+            'border',
+            'border-default',
 
+            // focus
+            'focus:ring-4',
+            'focus:ring-blue-200/20',
+          ].join(' '),
+        },
+      },
+      icon: {
+        base: 'text-icon',
+      },
+      default: {
+        size: 'md',
+      },
+    },
+    selectMenu: {
+      background: 'bg-white',
+      rounded: 'rounded-lg',
+      input: [
+        'block',
+        'w-[calc(100%+0.5rem)]',
+        'text-sm',
+        'px-3',
+        'py-2.5',
+        'text-default',
+        'bg-white',
+        'border-0',
+        'border-b',
+        'border-default',
+        'placeholder-default',
+
+        // sticky
+        'sticky',
+        '-top-1',
+        '-mt-1',
+        'mb-1',
+        '-mx-1',
+        'z-10',
+
+        // focus
+        'focus:ring-transparent',
+        'focus:border-inherit',
+        'focus:outline-none',
+      ].join(' '),
+      option: {
+        color: 'text-default',
+        empty: 'text-sm text-disabled px-2 py-1.5',
+      },
+      icon: {
+        base: 'flex-shrink-0 h-4 w-4',
+        active: 'text-icon',
+        inactive: 'text-icon-disabled',
+      },
+    },
   },
 })
